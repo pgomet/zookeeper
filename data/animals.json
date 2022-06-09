@@ -3,7 +3,7 @@
       {
         "id": "0",
         "name": "Spindle",
-        "species": "bear",
+        "species": "nnn",
         "diet": "omnivore",
         "personalityTraits": ["hungry", "zany", "loving"]
       },
