@@ -2,6 +2,8 @@ const express = require('express');
 const { animals } = require('./data/animals');
 const fs = require('fs');
 const path = require('path');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -71,6 +73,9 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
+
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 app.post('/api/animals', (req, res) => {
   // set id based on what the next index of the array will be
